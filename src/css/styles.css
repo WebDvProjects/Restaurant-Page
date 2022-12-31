@@ -1,0 +1,223 @@
+:root {
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* background-color: #f5f5f5; */
+
+  background: radial-gradient(
+        circle at 0% 50%,
+        rgba(0, 0, 0, 0.5),
+        rgba(255, 255, 255, 0.89)
+      )
+      fixed,
+    url(../images/fruits.jpg) no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  /* min-height: 100vh; */
+  height: 100vh;
+  color: #fff;
+}
+
+#content {
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header" "main" "footer";
+  height: 100%;
+}
+
+nav#nav {
+  grid-area: header;
+  --header-bg-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--header-bg-color);
+  box-shadow: 0 0 0 100vmax var(--header-bg-color);
+  clip-path: inset(0 -100vmax);
+}
+
+nav > ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+  cursor: pointer;
+}
+
+nav > ul > :hover {
+  color: rgba(224, 185, 185);
+  text-decoration: underline;
+}
+
+footer {
+  grid-area: footer;
+  --footer-bg-color: #333;
+  background-color: var(--footer-bg-color);
+  color: #fff;
+  /* padding: 20px; */
+  text-align: center;
+
+  box-shadow: 0 0 0 100vmax var(--footer-bg-color);
+  clip-path: inset(0 -100vmax);
+}
+
+nav,
+footer {
+  padding: 20px 0;
+}
+
+main {
+  grid-area: main;
+}
+
+main.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: #000;
+}
+
+main.menu {
+  padding: 20px 0;
+}
+
+main.menu > h1 {
+  margin-bottom: 20px;
+}
+main .menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: auto;
+  justify-items: center;
+  gap: 25px;
+}
+
+main.menu > .menu-items > .card {
+  background-color: rgba(255, 255, 255, 0.621);
+  border-radius: 10px;
+  overflow: hidden;
+  color: #000;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+  gap: 10px;
+  /* width: 300px; */
+}
+
+main.menu > .menu-items > .card > img {
+  width: 99%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  align-self: center;
+}
+
+.card .card-body {
+  /* padding: 2.5%; */
+  width: 100%;
+}
+
+.card-body p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+.card h5 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.card h5::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+}
+
+.card-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+#contact-form > input,
+#contact-form > textarea,
+#contact-form > button {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  max-width: 500px;
+  min-width: 200px;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  outline: none;
+}
+
+#contact-form > textarea {
+  height: 200px;
+}
+
+#contact-form > button {
+  background-color: rgb(61, 17, 238);
+  background: radial-gradient(
+      circle at 0% 50%,
+      rgba(0, 0, 0, 0.5),
+      rgba(255, 255, 255, 0.89)
+    ),
+    rgb(61, 17, 238);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
